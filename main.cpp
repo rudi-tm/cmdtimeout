@@ -9,6 +9,24 @@ int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
 
+    if(argc < 3)
+    {
+        qDebug() << "To few arguments!";
+        qDebug() << "Usage: cmdtimeout [00h][00m]00[s] command [argumentlist]";
+    }
+
+    int msec = parseTime(QString(argv[1]));
+
+    QStringList lst;
+    for(int idx=0; idx < argc-3; idx++)
+    {
+        QString tmpString(argv[idx+3]);
+        lst += tmpString;
+    }
+
+    QString cmd(argv[2]);
+    Application app(cmd,lst,msec);
+
     return a.exec();
 }
 
