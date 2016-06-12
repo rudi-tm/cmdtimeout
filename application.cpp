@@ -29,7 +29,7 @@ void Application::timeout()
     }
 }
 
-void Application::finished(int core)
+void Application::finished(int code)
 {
     QCoreApplication::quit();
 }

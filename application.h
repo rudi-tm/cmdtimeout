@@ -22,7 +22,7 @@ signals:
 
 public slots:
     void timeout();
-    void finished(int core);
+    void finished(int code);
 };
 
 #endif // APPLICATION_H
